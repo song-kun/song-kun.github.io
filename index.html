@@ -196,9 +196,8 @@
                 </p>
                 <p style="line-height:10px;font-size:14px;color: #777777"></p>
                 We focus on rendezvous in unknown environments where communication is available. 
-                We divide this task into two steps: rendezvous based environment exploration with relative pose (RP) estimation and rendezvous point selection.
-                A new strategy called partitioned and incomplete exploration for rendezvous (PIER) is proposed to efficiently explore the unknown environment, where lightweight topological maps are constructed and shared among robots for RP estimation with very few communications.
-                Then, a rendezvous point selection algorithm based on the merged topological map is proposed for efficient rendezvous for multi-robot systems.
+                We divide this task into two steps: rendezvous based environment exploration with relative pose estimation and rendezvous point selection.
+                A new strategy called partitioned and incomplete exploration for rendezvous (PIER) is proposed to efficiently explore the unknown environment and a rendezvous point can be selected for efficient rendezvous.
                 </p>
               </td>
             </tr>
@@ -220,10 +219,8 @@
                 </p>
                 <p style="line-height:10px;font-size:14px;color: #777777"></p>
                 We propose a novel rendezvous-based hierarchical architecture for mutual localization (RHAML). 
-                Firstly, to learn multi-scale robot features, anisotropic convolutions are introduced into the network, yielding initial localization results. 
-                Then, the iterative refinement module with rendering is employed to adjust the observed robot poses. 
-                Finally, the pose graph is conducted to globally optimize all localization results, which takes into account multi-frame observations. 
-                Therefore, a flexible architecture is provided that allows for the selection of appropriate modules based on requirements.
+                Anisotropic convolutions are introduced into the network, yielding initial localization results and the iterative refinement module with rendering is employed. 
+                Finally, the pose graph optimization is conducted to obtain more accurate results. 
                 </p>
               </td>
             </tr>
@@ -245,15 +242,14 @@
                   <a href="https://github.com/KunSong-L/FHT-Map" target="_blank">Code</a>
                 </p>
                 <p style="line-height:10px;font-size:14px;color: #777777"></p>
-                We propose a feature-based hybrid topological map (FHT-Map) along with a real-time map construction algorithm based on robot exploration.
-                Specifically, the FHT-Map utilizes both RGB cameras and LiDAR information and consists of two types of nodes: main node and support node.
-                Main nodes store visual information compressed by convolutional neural network and local laser scan data to enhance subsequent relocalization capability.
+                We propose a feature-based hybrid topological map (FHT-Map) which consists of two types of nodes: main node and support node.
+                Main nodes store compressed visual information and laser scan to enhance subsequent relocalization capability.
                 Support nodes retain a minimal amount of data to ensure storage efficiency while facilitating path planning.
                 </p>
               </td>
             </tr>
 
-            <tr>
+            <!-- <tr>
               <td
                 style="padding:10px;width:30%;vertical-align:middle;border-left-style:none;border-bottom-style:none;border-top-style:none;border-right-style:none">
                 <img src="./research/image/covidpre.png" alt="hpp" style="border-style: none" width="100%">
@@ -268,8 +264,12 @@
                 <p style="line-height:10px;font-size:14px;color: #777777">
                   <a href="https://link.springer.com/article/10.1007/s12204-020-2169-0" target="_blank">Paper</a>
                 </p>
+                <p style="line-height:10px;font-size:14px;color: #777777"></p>
+                We propose a 3-staged model e-ISHR to perform COVID-19 prediction.
+                </p>
+
               </td>
-            </tr>
+            </tr> -->
 
           </tbody>
         </table>
@@ -317,6 +317,10 @@
                   <a href="https://arxiv.org/abs/2312.06168" target="_blank">Paper</a> /
                   Code
                 </p>
+                <p style="line-height:10px;font-size:14px;color: #777777"></p>
+                We propose a novel planning framework for complex flipping manipulation by incorporating platform motions and regrasping. 
+                We formulate the planning problem as a set cover problem and determine minimal number of regrasping.
+                </p>
               </td>
             </tr>
             <tr>
@@ -332,7 +336,11 @@
                   Wenhang Liu, Meng Ren, <b>Kun Song</b>, Michael Yu Wang, and Zhenhua Xiong
                   <br>Under Review; TASE, 2024
                 <p style="line-height:10px;font-size:14px;color: #777777">
-                  Paper/Code
+                  <a href="https://arxiv.org/abs/2406.05613" target="_blank">Paper</a>
+                </p>
+                <p style="line-height:10px;font-size:14px;color: #777777"></p>
+                We present a novel distributed motion control approach aimed at reducing the interaction forces between multiple mobile manipulators.
+                The stability of the control law is rigorously proven by the Lyapunov theorem and the results are validated in simulations and experiments.
                 </p>
               </td>
             </tr>
@@ -351,6 +359,10 @@
                   <br>Revising; TRO, 2024
                 <p style="line-height:10px;font-size:14px;color: #777777">
                   Paper/Code
+                </p>
+                <p style="line-height:10px;font-size:14px;color: #777777"></p>
+                We propose a containment control law for double-integrator MRSs subject to non-uniform time-varying delays.
+                The stability is proved by the Lyapunov-Krasovskii function and linear matrix inequalities
                 </p>
               </td>
             </tr>
