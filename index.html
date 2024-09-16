@@ -107,14 +107,18 @@
         <br>coldtea@sjtu.edu.cn
       </p>
       
-      <!-- <p> 
+      <!-- <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=oz9bKgR2vKBdG76LxLgjmeBj6UZq8zrWxKwuZ0bUDqE"></script> -->
+      
       <script>
+        // 仅在线上环境加载
+        if (window.location.hostname !== 'localhost' && window.location.protocol !== 'file:') {
           var script = document.createElement('script');
-          script.src = 'https://clustrmaps.com/globe.js?d=oz9bKgR2vKBdG76LxLgjmeBj6UZq8zrWxKwuZ0bUDqE';
+          script.src = '//clustrmaps.com/globe.js?d=oz9bKgR2vKBdG76LxLgjmeBj6UZq8zrWxKwuZ0bUDqE';
           document.head.appendChild(script);
+        } else {
+          console.log("Skipping external script in local environment.");
+        }
       </script>
-      </p> -->
-      <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=oz9bKgR2vKBdG76LxLgjmeBj6UZq8zrWxKwuZ0bUDqE"></script>
       
       <!-- <script>
         if (window.location.protocol !== 'file:') {
