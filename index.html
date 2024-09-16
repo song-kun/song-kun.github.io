@@ -107,34 +107,8 @@
         <br>coldtea@sjtu.edu.cn
       </p>
       
-      <!-- <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=oz9bKgR2vKBdG76LxLgjmeBj6UZq8zrWxKwuZ0bUDqE"></script> -->
-      
-      <script>
-        console.log(window.location.protocol);
-
-        // 仅在线上环境加载
-        if (window.location.protocol !== 'file:') {
-          console.log("Online Env.");
-          var script = document.createElement('script');
-          script.type = 'text/javascript';
-          script.id = 'clstr_globe';
-          script.src = '//clustrmaps.com/globe.js?d=oz9bKgR2vKBdG76LxLgjmeBj6UZq8zrWxKwuZ0bUDqE';
-          document.head.appendChild(script);
-        } else {
-          console.log("Skipping external script in local environment.");
-        }
-      </script>
-      
-      <!-- <script>
-        if (window.location.protocol !== 'file:') {
-          var script = document.createElement('script');
-          script.src = 'https://clustrmaps.com/globe.js?d=oz9bKgR2vKBdG76LxLgjmeBj6UZq8zrWxKwuZ0bUDqE';
-          document.head.appendChild(script);
-        } else {
-          console.log("local mode");
-        }
-      </script> -->
-      
+      <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=oz9bKgR2vKBdG76LxLgjmeBj6UZq8zrWxKwuZ0bUDqE"></script>
+            
       <script type="text/javascript"
         language="javascript">document.write("Last updated: " + document.lastModified);</script>
       </p>
