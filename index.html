@@ -27,17 +27,7 @@
     ga('send', 'pageview');
   </script> -->
 
-<!-- <script>
-  (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date(); a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-  })(window, document, 'script', './javascripts/google_analytics.js', 'ga');
 
-  ga('create', 'UA-29643011-3', 'auto');
-  ga('send', 'pageview');
-</script> -->
 
   <!-- For all browsers -->
   <link rel="stylesheet" href="assets/css/academicons.min.css" />
@@ -95,10 +85,10 @@
 
 <body>
   <div class="wrapper">
-    <header>
+    <header class="left-section">
       <img src="kunsong.jpg" height="240" width="160" alt="Kun Song" text-align:center></h3>
       <h1>Kun Song </h1>
-      <h3><a href="https://kunsong.github.io/">Home</a></h3>
+      <h3><a href="https://kunsong-l.github.io/">Home</a></h3>
       <h3><a href="./research/CV.pdf">CV</a></h3>
 
 
@@ -117,16 +107,22 @@
         <br>coldtea@sjtu.edu.cn
       </p>
       <p> </p>
-      <script type="text/javascript" id="clstr_globe"
-        src="//clustrmaps.com/globe.js?d=oz9bKgR2vKBdG76LxLgjmeBj6UZq8zrWxKwuZ0bUDqE"></script>
+
+      <script>
+        if (window.location.protocol !== 'file:') {
+          var script = document.createElement('script');
+          script.src = 'https://clustrmaps.com/globe.js?d=oz9bKgR2vKBdG76LxLgjmeBj6UZq8zrWxKwuZ0bUDqE';
+          document.head.appendChild(script);
+        } else {
+          console.log("local mode");
+        }
+      </script>
       <script type="text/javascript"
         language="javascript">document.write("Last updated: " + document.lastModified);</script>
-      <!-- <script type="text/javascript" language="javascript">document.write("Last updated: " + "03/27/2024");</script> -->
-
       </p>
     </header>
 
-    <section>
+    <section class="right-section">
       <section>
         <h2><a id="Intro" class="anchor" href="#publications" aria-hidden="true"><span
               class="octicon octicon-link"></span></a> About Me </h2>
@@ -190,20 +186,21 @@
               </td>
               <td
                 style="padding:10px;width:70%;vertical-align:middle;border-left-style:none;border-bottom-style:none;border-top-style:none;border-right-style:none">
-                <p style="margin:0">
+                <div style="margin:0">
                   <t style="margin:0; font-size:100%; font-weight:bold"><big>Multi-Robot Rendezvous in Unknown
                       Environment with Limited Communication</big></t> <br>
                   <b>Kun Song</b>, Gaoming Chen, Wenhang Liu, and Zhenhua Xiong
                   <br><i>Robotics and Automation Letters</i>, 2024
-                <p style="line-height:10px;font-size:14px;color: #777777">
+                  </div>
+                <div style="line-height:20px;font-size:18px;color: #777777">
                   <a href="https://arxiv.org/abs/2405.08345" target="_blank">Paper</a> /
                   <a href="https://github.com/KunSong-L/Distributed-Multi-Robot-Topological-Map" target="_blank">Code</a>
-                </p>
-                <p style="line-height:10px;font-size:14px;color: #777777"></p>
+                </div>
+                <div style="line-height:20px;font-size:14px;color: #777777">
                 We focus on rendezvous in unknown environments where communication is available. 
                 We divide this task into two steps: rendezvous based environment exploration with relative pose estimation and rendezvous point selection.
                 A new strategy called partitioned and incomplete exploration for rendezvous (PIER) is proposed to efficiently explore the unknown environment and a rendezvous point can be selected for efficient rendezvous.
-                </p>
+                </div>
               </td>
             </tr>
 
@@ -219,14 +216,14 @@
                       Architecture for Mutual Localization</big></t> <br>
                   Gaoming Chen, <b>Kun Song</b>, Xiang Xu, Wenhang Liu, and Zhenhua Xiong
                   <br><i>Robotics and Automation Letters</i>, 2024
-                <p style="line-height:10px;font-size:14px;color: #777777">
+                  <div style="line-height:20px;font-size:18px;color: #777777">
                   <a href="https://ieeexplore.ieee.org/abstract/document/10540183" target="_blank">Paper</a>
-                </p>
-                <p style="line-height:10px;font-size:14px;color: #777777"></p>
+                </div>
+                <div style="line-height:20px;font-size:14px;color: #777777">
                 We propose a novel rendezvous-based hierarchical architecture for mutual localization (RHAML). 
                 Anisotropic convolutions are introduced into the network, yielding initial localization results and the iterative refinement module with rendering is employed. 
                 Finally, the pose graph optimization is conducted to obtain more accurate results. 
-                </p>
+                </div>
               </td>
             </tr>
 
@@ -242,15 +239,15 @@
                       Map for Relocalization and Path Planning</big></t> <br>
                   <b>Kun Song</b>, Wenhang Liu, Gaoming Chen, Xiang Xu, and Zhenhua Xiong
                   <br><i>Robotics and Automation Letters</i>, 2024
-                <p style="line-height:10px;font-size:14px;color: #777777">
+                <div style="line-height:20px;font-size:18px;color: #777777">
                   <a href="https://ieeexplore.ieee.org/document/10506547" target="_blank">Paper</a> /
                   <a href="https://github.com/KunSong-L/FHT-Map" target="_blank">Code</a>
-                </p>
-                <p style="line-height:10px;font-size:14px;color: #777777"></p>
+                </div>
+                <div style="line-height:20px;font-size:14px;color: #777777">
                 We propose a feature-based hybrid topological map (FHT-Map) which consists of two types of nodes: main node and support node.
                 Main nodes store compressed visual information and laser scan to enhance subsequent relocalization capability.
                 Support nodes retain a minimal amount of data to ensure storage efficiency while facilitating path planning.
-                </p>
+                </div>
               </td>
             </tr>
 
@@ -292,18 +289,18 @@
                 style="padding:10px;width:70%;vertical-align:middle;border-left-style:none;border-bottom-style:none;border-top-style:none;border-right-style:none">
                 <p style="margin:0">
                   <t style="margin:0; font-size:100%; font-weight:bold"><big><var>P<sup>2</sup></var> Explore: Efficient Exploration in Unknown Clustered Environment with Floor Plan Prediction</big></t> <br>
-                  <!-- <b>Kun Song</b>, Mingyu Ding, Gaoming Chen, Huaxiu Yao -->
+                  <b>Kun Song</b>, Gaoming Chen, Masayoshi Tomizuka, Wei Zhan, Mingyu Ding
                   <br>Submitted; ICRA, 2024
-                <p style="line-height:10px;font-size:14px;color: #777777">
+                <div style="line-height:20px;font-size:18px;color: #777777">
                   <a href="https://arxiv.org/abs/2312.06168" target="_blank">Paper</a> /
                   <a href="https://kunsong-l.github.io/projects/p2explore" target="_blank">Website</a> /
                   <a href="https://github.com/KunSong-L/P2Explore" target="_blank">Code</a>
-                </p>
-                <p style="line-height:10px;font-size:14px;color: #777777"></p>
+                </div>
+                <div style="line-height:20px;font-size:14px;color: #777777">
                   We propose <var>P<sup>2</sup></var> Explore, a framework that predicts the unseen floor plan based in clustered environments.
                   Based on the predicted map, we extract room segmentations and generate their topology.
                   We validate the effectiveness using the tasks of exploration and point-to-point navigation in unknown environments.
-                </p>
+                </div>
               </td>
             </tr>
             <tr>
@@ -318,14 +315,14 @@
                       Manipulator System in Complex Flipping Manipulation</big></t> <br>
                   Wenhang Liu, <b>Kun Song</b>, Meng Ren, Jiawei Hu, Yu Wang, and Zhenhua Xiong
                   <br>Under Review; TMech, 2023
-                <p style="line-height:10px;font-size:14px;color: #777777">
+                <div style="line-height:20px;font-size:18px;color: #777777">
                   <a href="https://arxiv.org/abs/2312.06168" target="_blank">Paper</a> /
                   Code
-                </p>
-                <p style="line-height:10px;font-size:14px;color: #777777"></p>
+                </div>
+                <div style="line-height:20px;font-size:14px;color: #777777">
                 We propose a novel planning framework for complex flipping manipulation by incorporating platform motions and regrasping. 
                 We formulate the planning problem as a set cover problem and determine minimal number of regrasping.
-                </p>
+                </div>
               </td>
             </tr>
             <tr>
@@ -340,13 +337,13 @@
                       Mobile Manipulator System with Disturbance and Communication Delay</big></t> <br>
                   Wenhang Liu, Meng Ren, <b>Kun Song</b>, Michael Yu Wang, and Zhenhua Xiong
                   <br>Under Review; TASE, 2024
-                <p style="line-height:10px;font-size:14px;color: #777777">
+                <div style="line-height:20px;font-size:18px;color: #777777">
                   <a href="https://arxiv.org/abs/2406.05613" target="_blank">Paper</a>
-                </p>
-                <p style="line-height:10px;font-size:14px;color: #777777"></p>
+                </div>
+                <div style="line-height:20px;font-size:14px;color: #777777">
                 We present a novel distributed motion control approach aimed at reducing the interaction forces between multiple mobile manipulators.
                 The stability of the control law is rigorously proven by the Lyapunov theorem and the results are validated in simulations and experiments.
-                </p>
+                </div>
               </td>
             </tr>
 
@@ -362,13 +359,13 @@
                       with Non-uniform Time-varying Delays</big></t> <br>
                   Meng Ren, Wenhang Liu, <b>Kun Song</b>, Ling Shi, and Zhenhua Xiong
                   <br>Revising; TRO, 2024
-                <p style="line-height:10px;font-size:14px;color: #777777">
+                <div style="line-height:20px;font-size:18px;color: #777777">
                   Paper/Code
-                </p>
-                <p style="line-height:10px;font-size:14px;color: #777777"></p>
+                </div>
+                <div style="line-height:20px;font-size:14px;color: #777777">
                 We propose a containment control law for double-integrator MRSs subject to non-uniform time-varying delays.
                 The stability is proved by the Lyapunov-Krasovskii function and linear matrix inequalities
-                </p>
+                </div>
               </td>
             </tr>
           </tbody>
@@ -397,7 +394,6 @@
         </li>
         <br>
 
-
         <script src="javascripts/scale.fix.js"></script>
         <script>
           var acc = document.getElementsByClassName("accordion");
@@ -410,6 +406,7 @@
             }
           }
         </script>
+
 
 </body>
 
