@@ -408,7 +408,7 @@
         </li>
         <br>
 
-        <!-- <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=oz9bKgR2vKBdG76LxLgjmeBj6UZq8zrWxKwuZ0bUDqE&cl=ffffff&w=a"></script> -->
+        <!-- <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=oz9bKgR2vKBdG76LxLgjmeBj6UZq8zrWxKwuZ0bUDqE&cl=ffffff&w=a"></script>
         <script>
           // 检测是否是在本地环境
           if (window.location.protocol !== 'file:') {
@@ -422,8 +422,27 @@
           } else {
             console.log("Local environment detected, ClustrMaps script will not be loaded.");
           }
-        </script>
+        </script> -->
         
+        <div id="clustrmaps-container"></div> <!-- 放置ClustrMaps脚本的位置 -->
+
+        <script>
+          // 检测是否在本地环境
+          if (window.location.protocol !== 'file:') {
+            console.log("Online environment detected, loading ClustrMaps script.");
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.id = 'clustrmaps';
+            script.src = '//clustrmaps.com/map_v2.js?d=oz9bKgR2vKBdG76LxLgjmeBj6UZq8zrWxKwuZ0bUDqE&cl=ffffff&w=a';
+
+            // 将脚本插入到你指定的位置，比如 <div id="clustrmaps-container"></div>
+            var container = document.getElementById('clustrmaps-container');
+            container.appendChild(script);  // 将脚本放在容器中
+          } else {
+            console.log("Local environment detected, ClustrMaps script will not be loaded.");
+          }
+        </script>
+
         <script src="javascripts/scale.fix.js"></script>
         <script>
           var acc = document.getElementsByClassName("accordion");
