@@ -299,3 +299,151 @@ screen and (max-width: 480px) {
     color: #444;
   }
 }
+
+/* Keep the profile and research content readable at every viewport width. */
+.wrapper {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 64px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.left-section {
+  position: sticky;
+  top: 30px;
+  align-self: start;
+  width: auto;
+  float: none;
+}
+
+.right-section,
+.right-section > section {
+  width: auto;
+  float: none;
+  min-width: 0;
+  padding-bottom: 0;
+}
+
+.experience-list {
+  margin-bottom: 32px;
+}
+
+.experience-entry {
+  margin-bottom: 22px;
+  padding-left: 16px;
+  border-left: 3px solid #5499c7;
+}
+
+.experience-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 16px;
+  margin-bottom: 6px;
+}
+
+.experience-heading h3 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.experience-location,
+.experience-date {
+  color: #666;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.experience-entry p {
+  margin-bottom: 6px;
+}
+
+.experience-role {
+  color: #444;
+  font-weight: 500;
+}
+
+.paper-title {
+  color: #5499c7;
+  font-weight: bold;
+}
+
+.paper-links {
+  margin: 3px 0;
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+.paper-summary {
+  line-height: 20px;
+  font-size: 14px;
+  color: #777;
+}
+
+.publication-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #f3f5f7;
+  border-radius: 6px;
+}
+
+.service-list li {
+  margin-bottom: 12px;
+}
+
+@media screen and (max-width: 960px) {
+  .wrapper {
+    display: block;
+  }
+
+  .left-section {
+    position: static;
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .right-section > section {
+    border: 0;
+    margin: 0;
+    padding-top: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .publications-table,
+  .publications-table tbody,
+  .publications-table tr,
+  .publications-table td {
+    display: block;
+    box-sizing: border-box;
+    width: 100% !important;
+  }
+
+  .publications-table tr {
+    margin-bottom: 24px;
+  }
+
+  .publications-table td {
+    padding: 8px 0 !important;
+  }
+
+  .publications-table td:first-child {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media print {
+  .wrapper {
+    display: block;
+  }
+
+  .left-section {
+    position: static;
+  }
+}

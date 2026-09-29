@@ -1,0 +1,237 @@
+.publication-browser {
+  margin-bottom: 32px;
+}
+
+.publication-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 18px;
+  margin: 0 0 16px;
+}
+
+.publication-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.publication-sort {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px 12px;
+  margin: 0 0 4px;
+}
+
+.publication-sort label {
+  color: #52738a;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.publication-sort-select {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 44px;
+  padding: 9px 12px;
+  border: 1px solid #d4e3ed;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #397fac;
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.publication-sort-select:hover {
+  border-color: #5499c7;
+  background-color: #f2f8fc;
+}
+
+.publication-tab,
+.full-publication-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 42px;
+  padding: 9px 14px;
+  border: 1px solid #d4e3ed;
+  border-radius: 6px;
+  background: #fff;
+  color: #397fac;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.publication-tab:hover,
+.full-publication-link:hover {
+  border-color: #5499c7;
+  background: #f2f8fc;
+  color: #25618a;
+}
+
+.publication-tab[aria-selected="true"] {
+  border-color: #5499c7;
+  background: #5499c7;
+  color: #fff;
+}
+
+.publication-tab:focus-visible,
+.publication-sort-select:focus-visible,
+.full-publication-link:focus-visible,
+.publication-back-link:focus-visible,
+.publication-links a:focus-visible,
+.publication-title a:focus-visible,
+.publication-results:focus-visible {
+  outline: 3px solid #174e73;
+  outline-offset: 3px;
+}
+
+.full-publication-link {
+  border-color: #5499c7;
+}
+
+.publication-note {
+  margin: 16px 0 0;
+  color: #777;
+  font-size: 13px;
+}
+
+.publication-card {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 7fr);
+  align-items: center;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.publication-media,
+.publication-details {
+  min-width: 0;
+}
+
+.publication-media img,
+.publication-media video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.publication-title {
+  margin: 0 0 8px;
+  color: #5499c7;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.publication-title a {
+  color: inherit;
+}
+
+.publication-title a:hover {
+  color: #25618a;
+}
+
+.publication-authors,
+.publication-venue {
+  margin: 0 0 5px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.publication-links {
+  margin: 5px 0 8px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.publication-summary {
+  margin: 0;
+  color: #777;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.publication-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.publication-tags li {
+  margin: 0;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: #f1f6f9;
+  color: #52738a;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.publication-page-intro {
+  margin: 0 0 22px;
+  color: #777;
+}
+
+.publication-back-link {
+  display: inline-block;
+  margin-bottom: 22px;
+}
+
+@media screen and (max-width: 600px) {
+  .publication-sort {
+    justify-content: flex-start;
+  }
+
+  .publication-toolbar {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .publication-tab,
+  .full-publication-link {
+    min-height: 44px;
+    padding: 9px 12px;
+  }
+
+  .publication-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    padding: 24px 0;
+  }
+
+  .publication-media {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media print {
+  .publication-toolbar,
+  .publication-sort,
+  .publication-back-link {
+    display: none;
+  }
+
+  .publication-card {
+    break-inside: avoid;
+  }
+}
