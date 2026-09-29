@@ -279,7 +279,7 @@
       },
       {
         "label": "Website",
-        "href": "projects/pears/index.html"
+        "href": window.location.protocol === "file:" ? "pears/index.html" : "pears/"
       }
     ],
     "summary": "PEARS combines physics-guided force reasoning and tactile-conditioned diffusion steering to adapt frozen pretrained policies with fewer real-world interactions. It achieves 95% success on Whiteboard Erasing and 90% on Pipette Liquid Aspiration in real-world experiments."

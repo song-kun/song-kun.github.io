@@ -181,7 +181,7 @@
               <span class="experience-date">Mar. 2026 &ndash; Sept. 2026</span>
             </div>
             <p class="experience-role">Project Lead, Tactile Real-World Reinforcement Learning</p>
-            <p>Developed <a href="projects/pears/index.html" data-online-href="https://song-kun.github.io/projects/pears/">PEARS</a> for contact-rich tactile manipulation, combining physics-guided force reasoning, vision-language failure diagnosis, and tactile-conditioned diffusion steering.</p>
+            <p>Developed <a href="pears/" data-file-href="pears/index.html">PEARS</a> for contact-rich tactile manipulation, combining physics-guided force reasoning, vision-language failure diagnosis, and tactile-conditioned diffusion steering.</p>
           </article>
         </div>
 
@@ -318,14 +318,10 @@
         </script>
 
         <script>
-          // Keep project pages local during file or localhost previews.
-          const isLocalPreview = window.location.protocol === 'file:' ||
-            ['localhost', '127.0.0.1', '[::1]'].includes(window.location.hostname) ||
-            window.location.hostname.endsWith('.localhost');
-
-          if (!isLocalPreview) {
-            document.querySelectorAll('a[data-online-href]').forEach(function (link) {
-              link.href = link.dataset.onlineHref;
+          // File previews need an explicit index.html; HTTP uses the short URL.
+          if (window.location.protocol === 'file:') {
+            document.querySelectorAll('a[data-file-href]').forEach(function (link) {
+              link.href = link.dataset.fileHref;
             });
           }
         </script>

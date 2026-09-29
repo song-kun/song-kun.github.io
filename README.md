@@ -16,3 +16,9 @@ earliest online version of a published paper. Keep only known precision (`YYYY`,
 has only a known year (2026). Papers with identical dates keep their data order.
 
 Publication styles are in `stylesheets/publications.css`. No build step is required.
+
+The PEARS project website is served at `https://song-kun.github.io/pears/`.
+Edit `pears/index.html` for its content. Styles, images, PDF, and videos remain
+under `projects/pears/` so existing resource links stay valid. The old page at
+`projects/pears/index.html` redirects to `/pears/`. File previews use explicit
+`index.html` links; HTTP previews and GitHub Pages use the short directory URL.
