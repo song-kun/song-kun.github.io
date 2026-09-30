@@ -8,6 +8,8 @@
   <title>PEARS | Physical-Prior-Guided Tactile Manipulation</title>
   <link rel="canonical" href="https://song-kun.github.io/pears/">
   <link rel="stylesheet" href="../projects/pears/styles.css">
+  <link rel="stylesheet" href="../projects/pears/force-playground.css">
+  <script src="../projects/pears/force-playground.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -17,6 +19,7 @@
       <div class="nav-links">
         <a href="#method">Method</a>
         <a href="#results">Results</a>
+        <a href="#force-playground">Demo</a>
         <a href="../projects/pears/pears.pdf">Paper <span aria-hidden="true">&nearr;</span></a>
       </div>
     </nav>
@@ -223,6 +226,130 @@
           </tbody>
         </table>
       </div>
+    </section>
+
+    <section id="force-playground" class="force-demo section wrap" aria-labelledby="force-demo-title">
+      <div class="section-heading">
+        <p class="section-label">An interactive explanation</p>
+        <h2 id="force-demo-title">A little physics goes a long way.</h2>
+        <p>Too gentle, and the marks remain. Too forceful, and the eraser slips. Follow three rollouts to see how failure reasoning points toward a better contact force.</p>
+      </div>
+      <div class="force-lab" data-mode="guided" data-outcome="low">
+        <div class="force-lab-header">
+          <span class="force-lab-name"><span class="force-lab-dot" aria-hidden="true"></span> Whiteboard lab</span>
+          <div class="force-modes" role="group" aria-label="Demo mode">
+            <button type="button" data-force-mode="guided" aria-pressed="true" disabled>Guided rollouts</button>
+            <button type="button" data-force-mode="custom" aria-pressed="false" disabled>Try your own force</button>
+          </div>
+        </div>
+        <div class="force-episodes" role="group" aria-label="Choose a rollout">
+          <button type="button" data-force-episode="0" aria-pressed="true" disabled><span>01 <span class="force-episode-name">First attempt</span></span><strong>2 N</strong></button>
+          <button type="button" data-force-episode="1" aria-pressed="false" disabled><span>02 <span class="force-episode-name">Increase force</span></span><strong>9 N</strong></button>
+          <button type="button" data-force-episode="2" aria-pressed="false" disabled><span>03 <span class="force-episode-name">Refine force</span></span><strong>6 N</strong></button>
+        </div>
+        <div class="force-custom" hidden>
+          <label for="force-choice">Choose the force for your next rollout <strong id="force-choice-value">6 N</strong></label>
+          <input id="force-choice" type="range" min="0" max="12" step="0.5" value="6" aria-describedby="force-choice-hint" disabled>
+          <p id="force-choice-hint">Changing the force starts a fresh rollout. The force target stays fixed during each attempt.</p>
+        </div>
+        <div class="force-workspace">
+          <div class="force-scene-panel">
+            <div class="force-scene-top"><span id="force-scene-label">Rollout 01 / 03</span><span id="force-phase">Ready</span></div>
+            <svg class="force-scene" viewBox="0 0 720 430" role="img" aria-labelledby="force-scene-title force-scene-desc">
+              <title id="force-scene-title">Robot whiteboard erasing</title>
+              <desc id="force-scene-desc">A robot follows a wiping path. At 2 newtons, ink remains; at 9 newtons, the eraser slips; at 6 newtons, the board is clean.</desc>
+              <defs>
+                <linearGradient id="force-board-frame" x2="0" y2="1"><stop stop-color="#d6e2e8"/><stop offset="1" stop-color="#adc1cc"/></linearGradient>
+                <linearGradient id="force-board-surface" x2="0.2" y2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#f6f9fb"/></linearGradient>
+                <linearGradient id="force-robot-metal" x2="1" y2="0"><stop stop-color="#b9cbd5"/><stop offset="0.48" stop-color="#eff5f8"/><stop offset="1" stop-color="#99b1bf"/></linearGradient>
+                <pattern id="force-scene-grid" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#c6d6df"/></pattern>
+                <mask id="force-ink-mask" maskUnits="userSpaceOnUse" x="94" y="65" width="532" height="275">
+                  <rect x="94" y="65" width="532" height="275" fill="white"/>
+                  <path id="force-wipe-trail" d="M 138 142" fill="none" stroke="black" stroke-width="86" stroke-linecap="round" stroke-linejoin="round" opacity="0"/>
+                </mask>
+              </defs>
+              <rect width="720" height="430" fill="#edf3f6"/>
+              <rect width="720" height="430" fill="url(#force-scene-grid)" opacity="0.65"/>
+              <ellipse cx="358" cy="365" rx="263" ry="17" fill="#173b54" opacity="0.08"/>
+              <rect x="79" y="52" width="562" height="303" rx="14" fill="url(#force-board-frame)" stroke="#96adb9"/>
+              <rect x="91" y="64" width="538" height="279" rx="6" fill="url(#force-board-surface)" stroke="#c1d0d9"/>
+              <path d="M 138 142 H 574 V 213 H 138 V 279 H 574" fill="none" stroke="#c6d9e4" stroke-width="2" stroke-dasharray="5 8" opacity="0.8"/>
+              <g mask="url(#force-ink-mask)" fill="#264f6b" stroke="#264f6b">
+                <text x="171" y="167" stroke="none" font-size="64" font-weight="700" letter-spacing="7">PEARS</text>
+                <path d="M 174 183 Q 330 174 540 181" fill="none" stroke-width="3.5" stroke-linecap="round"/>
+                <text x="174" y="229" stroke="none" font-size="25" font-style="italic">learn from every interaction</text>
+                <path d="M 175 282 Q 196 256 218 280 T 262 280 T 306 280 M 353 271 H 393 M 353 282 H 393 M 421 282 Q 457 257 486 278 T 542 270" fill="none" stroke-width="4" stroke-linecap="round"/>
+              </g>
+              <g id="force-slip-mark" opacity="0" stroke="#b65742" fill="none" stroke-width="3" stroke-linecap="round">
+                <path d="M 538 204 l 15 -9 m -5 20 l 18 -3 m -16 16 l 15 6"/>
+              </g>
+              <g id="force-arm" aria-hidden="true">
+                <path id="force-arm-outline" d="M 659 8 L 478 30 L 138 75" fill="none" stroke="#8ba3b2" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
+                <path id="force-arm-inner" d="M 659 8 L 478 30 L 138 75" fill="none" stroke="#dce7ed" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle id="force-elbow" cx="478" cy="30" r="21" fill="#ecf2f6" stroke="#99b1bf" stroke-width="4"/>
+                <circle id="force-elbow-core" cx="478" cy="30" r="9" fill="#477590"/>
+              </g>
+              <g id="force-eraser" transform="translate(138 111)" aria-hidden="true">
+                <ellipse id="force-contact-shadow" cx="0" cy="9" rx="49" ry="35" fill="#193b50" opacity="0.12"/>
+                <g id="force-pad">
+                  <rect x="-42" y="-28" width="84" height="67" rx="9" fill="#244b64"/>
+                  <rect x="-40" y="23" width="80" height="15" rx="4" fill="#6ca6af"/>
+                  <rect x="-31" y="-21" width="62" height="40" rx="5" fill="#416b83"/>
+                  <path d="M -19 -13 v 25 m 12 -25 v 25 m 12 -25 v 25 m 12 -25 v 25" stroke="#7092a5" stroke-width="2"/>
+                </g>
+                <g id="force-gripper">
+                  <rect x="-17" y="-85" width="34" height="38" rx="8" fill="url(#force-robot-metal)" stroke="#8ba5b5"/>
+                  <rect x="-46" y="-53" width="92" height="24" rx="7" fill="url(#force-robot-metal)" stroke="#8ba5b5"/>
+                  <path d="M -41 -35 V 8 H -31 M 41 -35 V 8 H 31" fill="none" stroke="#b3c7d2" stroke-width="12" stroke-linejoin="round"/>
+                  <circle cx="0" cy="-41" r="5" fill="#2d6e8d"/>
+                </g>
+              </g>
+              <g id="force-result-stamp" opacity="0">
+                <rect x="238" y="361" width="244" height="37" rx="18" fill="#e1f0e9"/>
+                <text id="force-result-text" x="360" y="385" text-anchor="middle" fill="#23664f" font-size="16" font-weight="650">Clean board. Stable contact.</text>
+              </g>
+              <text x="92" y="402" fill="#667f8e" font-size="12" letter-spacing="1.5">TOP VIEW</text>
+              <text x="629" y="402" fill="#667f8e" font-size="12" text-anchor="end">Same wiping path. Different force.</text>
+            </svg>
+            <div class="force-observations">
+              <div><span>Contact target</span><strong id="force-target">2 N</strong></div>
+              <div><span>Visual outcome</span><strong id="force-visual">Ready to wipe</strong></div>
+            </div>
+          </div>
+          <aside class="force-insight" aria-label="Force and failure reasoning">
+            <div class="force-meter-heading"><span>Normal contact force</span><strong id="force-reading">2 <small>N</small></strong></div>
+            <div class="force-meter" aria-hidden="true">
+              <div class="force-meter-track"><span class="force-meter-band"></span><span id="force-meter-pointer"></span></div>
+              <div class="force-meter-ticks"><span>0</span><span>5</span><span>8</span><span>12 N</span></div>
+            </div>
+            <p class="force-window"><span aria-hidden="true"></span> Effective contact window: <strong>5–8 N</strong></p>
+            <div class="force-reasoning" aria-live="polite" aria-atomic="true">
+              <p class="force-small-label">Physics-guided force reasoning</p>
+              <h3 id="force-diagnosis">Start with a hypothesis.</h3>
+              <p id="force-evidence">Try 2 N and observe what the wiping pass leaves behind.</p>
+              <div id="force-reason-detail" hidden>
+                <span class="force-small-label">Physical prior</span>
+                <p id="force-prior"></p>
+                <span class="force-small-label">Next interaction</span>
+                <p id="force-update"></p>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="force-player">
+          <div class="force-player-actions">
+            <button type="button" id="force-play" class="force-play-button" disabled>Play rollouts</button>
+            <button type="button" id="force-reset" class="force-reset-button" disabled>Start over</button>
+            <span id="force-progress-text" aria-hidden="true">Rollout 1 · 0%</span>
+          </div>
+          <label class="force-timeline-label" for="force-progress">Drag to explore the rollouts</label>
+          <input id="force-progress" type="range" min="0" max="300" step="0.1" value="0" disabled>
+          <div class="force-timeline-ticks" aria-hidden="true"><span>2 N · too gentle</span><span>9 N · too forceful</span><span>6 N · just right</span></div>
+        </div>
+      </div>
+      <p class="force-demo-context"><strong>Beyond this simplified demo.</strong> Real-world failures can involve more complex combinations of force, positioning, and contact timing. To address this, we propose PEARS: a framework that uses a VLM to reason with physical priors and the complete history of interaction outcomes and tactile feedback, diagnosing failures and inferring suitable contact-force ranges for the next interaction.</p>
+      <p class="force-demo-note">The 5–8 N window, forces, and outcomes above are illustrative. In PEARS, force bounds are updated between episodes, while RL separately refines motion and contact timing.</p>
+      <noscript><p class="force-demo-note">Enable JavaScript to play or scrub through the demo. The sequence is 2 N (residual marks), 9 N (eraser slips), then 6 N (successful wiping).</p></noscript>
     </section>
   </main>
 

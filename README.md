@@ -22,3 +22,9 @@ Edit `pears/index.html` for its content. Styles, images, PDF, and videos remain
 under `projects/pears/` so existing resource links stay valid. The old page at
 `projects/pears/index.html` redirects to `/pears/`. File previews use explicit
 `index.html` links; HTTP previews and GitHub Pages use the short directory URL.
+
+The interactive whiteboard demo at `/pears/#force-playground` uses
+`projects/pears/force-playground.js` and `force-playground.css`. It illustrates
+PFR with three fixed-force rollouts (2 N, 9 N, 6 N), a draggable timeline, and
+a custom-force mode. Its 5–8 N contact window and outcomes are illustrative,
+not measured experimental results. It runs locally without an API or build step.
