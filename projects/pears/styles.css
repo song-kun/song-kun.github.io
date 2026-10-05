@@ -95,11 +95,15 @@ td { white-space: nowrap; font-variant-numeric: tabular-nums; }
 .video-grid { display: grid; gap: 28px; margin-bottom: 48px; }
 .simulation-videos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .real-world-videos, .comparison-videos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.rollout-intro { max-width: 800px; margin: -8px 0 28px; color: var(--muted); }
+.rollout-task-title { margin: 0 0 18px; font-size: 22px; font-weight: 650; line-height: 1.3; letter-spacing: -.025em; }
 .video-card { min-width: 0; }
 .video-card video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; background: #10171c; border-radius: 6px; }
 .video-card figcaption { padding-top: 12px; }
 .video-card figcaption > strong { display: block; font-size: 18px; }
 .video-card figcaption > p { margin-top: 5px; font-size: 15px; }
+.real-world-videos figcaption > .rollout-failure { color: #a13f32; }
+.real-world-videos figcaption > .ours { color: var(--blue); }
 .force-comparison { padding-top: 34px; margin-bottom: 48px; border-top: 1px solid var(--line); }
 .force-comparison h3 { font-size: 26px; }
 .comparison-videos { max-width: 820px; margin: 0 auto; }

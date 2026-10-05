@@ -177,20 +177,39 @@
         <p>Each adaptive method receives 40 episodes of online interaction, followed by 20 test trials per task.</p>
       </div>
       <h3 class="subsection-title" id="real-world-rollouts">Real-world rollouts</h3>
-      <div class="video-grid real-world-videos" aria-labelledby="real-world-rollouts">
+      <p class="rollout-intro">For each task, a failed behavior-cloned (BC) rollout before adaptation is followed by a successful rollout after PEARS training.</p>
+      <h4 class="rollout-task-title" id="aspiration-rollouts">Pipette Liquid Aspiration</h4>
+      <div class="video-grid real-world-videos" aria-labelledby="aspiration-rollouts">
         <figure class="video-card">
-          <video controls muted loop playsinline preload="none" poster="../projects/pears/assets/video-posters/aspiration.webp" width="1920" height="1080" aria-label="Pipette Liquid Aspiration real-world rollout">
-            <source src="../projects/pears/video/realworld/aspiration-web.mp4" type="video/mp4">
-            <a href="../projects/pears/video/realworld/aspiration-web.mp4">Watch the Pipette Liquid Aspiration rollout.</a>
+          <video controls muted loop playsinline preload="none" poster="../projects/pears/assets/video-posters/aspiration-fail.webp" width="1280" height="720" aria-label="BC rollout failure on Pipette Liquid Aspiration: incorrect positioning and misalignment">
+            <source src="../projects/pears/video/realworld/aspiration-fail-web.mp4" type="video/mp4">
+            <a href="../projects/pears/video/realworld/aspiration-fail-web.mp4">Watch the failed BC Pipette Liquid Aspiration rollout.</a>
           </video>
-          <figcaption><strong>Pipette Liquid Aspiration</strong><p>The grasp must be strong enough to lift and transfer the pipette, yet gentle enough to avoid expelling liquid. PEARS succeeds in 18 of 20 trials.</p></figcaption>
+          <figcaption><strong class="rollout-failure">BC rollout &middot; Failure</strong><p><b>Incorrect positioning.</b> The pipette is not properly aligned, causing the task to fail.</p></figcaption>
         </figure>
         <figure class="video-card">
-          <video controls muted loop playsinline preload="none" poster="../projects/pears/assets/video-posters/whiteboard.webp" width="1280" height="720" aria-label="Whiteboard Erasing real-world rollout">
-            <source src="../projects/pears/video/realworld/whiteboard-web.mp4" type="video/mp4">
-            <a href="../projects/pears/video/realworld/whiteboard-web.mp4">Watch the Whiteboard Erasing rollout.</a>
+          <video controls muted loop playsinline preload="none" poster="../projects/pears/assets/video-posters/aspiration.webp" width="1920" height="1080" aria-label="Successful Pipette Liquid Aspiration rollout after PEARS training">
+            <source src="../projects/pears/video/realworld/aspiration-web.mp4" type="video/mp4">
+            <a href="../projects/pears/video/realworld/aspiration-web.mp4">Watch the successful Pipette Liquid Aspiration rollout after PEARS training.</a>
           </video>
-          <figcaption><strong>Whiteboard Erasing</strong><p>The robot must apply enough normal force to remove marker traces while keeping the eraser securely grasped. PEARS succeeds in 19 of 20 trials.</p></figcaption>
+          <figcaption><strong class="ours">PEARS &middot; Success</strong><p>After PEARS training, the robot successfully completes liquid aspiration and transfer. PEARS succeeds in 18 of 20 trials.</p></figcaption>
+        </figure>
+      </div>
+      <h4 class="rollout-task-title" id="whiteboard-rollouts">Whiteboard Erasing</h4>
+      <div class="video-grid real-world-videos" aria-labelledby="whiteboard-rollouts">
+        <figure class="video-card">
+          <video controls muted loop playsinline preload="none" poster="../projects/pears/assets/video-posters/whiteboard-fail.webp" width="1280" height="720" aria-label="BC rollout failure on Whiteboard Erasing: inappropriate force magnitude">
+            <source src="../projects/pears/video/realworld/whiteboard-fail.mp4" type="video/mp4">
+            <a href="../projects/pears/video/realworld/whiteboard-fail.mp4">Watch the failed BC Whiteboard Erasing rollout.</a>
+          </video>
+          <figcaption><strong class="rollout-failure">BC rollout &middot; Failure</strong><p><b>Inappropriate force magnitude.</b> The applied force is unsuitable for the task, resulting in unsuccessful erasing.</p></figcaption>
+        </figure>
+        <figure class="video-card">
+          <video controls muted loop playsinline preload="none" poster="../projects/pears/assets/video-posters/whiteboard.webp" width="1280" height="720" aria-label="Successful Whiteboard Erasing rollout after PEARS training">
+            <source src="../projects/pears/video/realworld/whiteboard-web.mp4" type="video/mp4">
+            <a href="../projects/pears/video/realworld/whiteboard-web.mp4">Watch the successful Whiteboard Erasing rollout after PEARS training.</a>
+          </video>
+          <figcaption><strong class="ours">PEARS &middot; Success</strong><p>After PEARS training, the robot applies appropriate contact force to erase the board while keeping the eraser securely grasped. PEARS succeeds in 19 of 20 trials.</p></figcaption>
         </figure>
       </div>
       <section class="force-comparison" aria-labelledby="force-comparison-title">

@@ -2,3 +2,9 @@
 .jekyll-cache
 _site
 .--trace
+
+# Keep original real-world videos local; publish only the versions used by the site.
+/projects/pears/video/realworld/aspiration.mp4
+/projects/pears/video/realworld/aspiration_fail.mp4
+/projects/pears/video/realworld/bc.mp4
+/projects/pears/video/realworld/whiteboard.mp4
