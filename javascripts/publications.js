@@ -47,14 +47,15 @@
     "firstAuthor": true,
     "date": "2025-08-05",
     "dateSource": "https://arxiv.org/abs/2508.03526",
+    "acceptanceDate": "2026-11-27",
     "categories": [
       "manipulation",
       "multi-robot-system"
     ],
-    "status": "under-review",
+    "status": "accepted",
     "title": "CollaBot: Vision-Language Guided Simultaneous Collaborative Manipulation of Large Objects",
-    "authors": "<b>Kun Song</b>, Shentao Ma, Gaoming Chen, Ninglong Jin, Guangbao Zhao, Mingyu Ding, Zhenhua Xiong, and Jia Pan",
-    "venue": "Under review for <i>Robotics and Automation Letters</i>",
+    "authors": "<b>Kun Song*</b>, Gaoming Chen*, Shentao Ma, Ninglong Jin, Guangbao Zhao, Mingyu Ding, Zhenhua Xiong, and Jia Pan",
+    "venue": "<i>IEEE Robotics and Automation Letters (RA-L)</i> &middot; 2027",
     "media": {
       "type": "image",
       "src": "research/gif/move_chair.gif",
@@ -70,9 +71,13 @@
       {
         "label": "Code",
         "href": "https://github.com/song-kun/CollaBot"
+      },
+      {
+        "label": "Website",
+        "href": window.location.protocol === "file:" ? "projects/CollaBot/index.html" : "projects/CollaBot/"
       }
     ],
-    "summary": "We propose <var>CollaBot</var>, the first generalist framework for simultaneous collaborative manipulation. First, we use SEEM for scene segmentation and point cloud extraction of the target object. Then, we propose a collaborative grasping framework, which decomposes the task into local grasp pose generation and global collaboration. Finally, we design a 2-stage planning module that can generate collision-free trajectories to achieve this task."
+    "summary": "<var>CollaBot</var> combines vision-language guidance, collaborative grasp generation, and two-stage motion planning for large-object manipulation with multiple mobile robots. It achieves 77.0% success across 300 simulated trials with two- and three-robot teams, with further validation on physical robots."
   },
   {
     "id": "p2explore",

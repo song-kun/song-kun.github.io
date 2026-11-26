@@ -17,6 +17,15 @@ has only a known year (2026). Papers with identical dates keep their data order.
 
 Publication styles are in `stylesheets/publications.css`. No build step is required.
 
+The CollaBot project website is in `projects/CollaBot/index.html`, served at
+`https://song-kun.github.io/projects/CollaBot/`. The `/CollaBot/` path redirects
+there to preserve the URL printed in the paper. Its images and demonstration
+videos are self-contained in that project directory. School logos were extracted
+from the supplied poster; authors, affiliations, and results follow the final
+RA-L manuscript. Acceptance is dated November 27, 2026. The publication entry
+retains its first arXiv release date for sorting until a publication date is known;
+`acceptanceDate` records acceptance separately.
+
 The PEARS project website is served at `https://song-kun.github.io/pears/`.
 Edit `pears/index.html` for its content. Styles, images, PDF, and videos remain
 under `projects/pears/` so existing resource links stay valid. The old page at
