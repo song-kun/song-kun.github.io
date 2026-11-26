@@ -57,11 +57,10 @@
     "authors": "<b>Kun Song*</b>, Gaoming Chen*, Shentao Ma, Ninglong Jin, Guangbao Zhao, Mingyu Ding, Zhenhua Xiong, and Jia Pan",
     "venue": "<i>IEEE Robotics and Automation Letters (RA-L)</i> &middot; 2027",
     "media": {
-      "type": "image",
-      "src": "research/gif/move_chair.gif",
-      "alt": "CollaBot: Vision-Language Guided Simultaneous Collaborative Manipulation of Large Objects",
-      "width": 720,
-      "height": 346
+      "type": "video",
+      "src": "projects/CollaBot/videos/real-world.mp4",
+      "poster": "projects/CollaBot/images/real-world-poster.jpg",
+      "alt": "CollaBot real-world demonstration with two mobile manipulators"
     },
     "links": [
       {
